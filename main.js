@@ -1,4 +1,5 @@
 let myLibrary = [];
+let counter = 0;
 
 // Creates new objects for new entries
 function Book(title, author, pages, read) {
@@ -16,8 +17,9 @@ function addBookToLibrary(title, author, pages, read) {
 };
 
 // Creates new divs for each library entry
-function displayBook() {
-    myLibrary.forEach((object) => {
+function displayBook(object = myLibrary[counter]) {
+        console.log(object);
+
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('cardDiv');
 
@@ -35,7 +37,8 @@ function displayBook() {
 
             cardDiv.appendChild(display);
         };
-    });
+
+        counter += 1;
 };
 
 // Display and hide new book form
@@ -45,10 +48,6 @@ function openForm() {
 
 function closeForm() {
     document.getElementById('popupForm').style.display = 'none';
-};
-
-function clearForm() {
-
 };
 
 // Submits form info to myLibrary
