@@ -18,6 +18,28 @@
             <button>+ New Book</button>
         </div>
 
+        <div class="bookForm">
+            <form action="example.com/path" method="post">
+                <input type="text" id="title" name="title" required>
+                <label for="title">Title</label>
+
+                <input type="text" id="author" name="author" required>
+                <label for="author">Author</label>
+
+                <input type="number" id="pages" name="pages" required>
+                <label for="pages">Number of pages</label>
+
+                <select name="read" id="read" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="read">Have you read this title?</label>
+
+                <button type="button">Add Book</button>
+                <button type="button">Cancel</button>
+            </form>
+        </div>
+
         <div class="cardContainer">
             
         </div>
