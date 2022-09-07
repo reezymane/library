@@ -25,6 +25,8 @@ function displayBook(object = myLibrary[counter]) {
 
         container[0].appendChild(cardDiv);
 
+        cardDiv.setAttribute("data-entryNumber", counter);
+
         for(const [key, value] of Object.entries(object)) {
             const display = document.createElement('p');
             display.classList.add(key);
@@ -46,7 +48,7 @@ function displayBook(object = myLibrary[counter]) {
         removeImg.src = './img/trash.png';
 
         const removeButton = document.getElementsByClassName('remove');
-        removeButton[0].appendChild(removeImg);
+        removeButton[counter].appendChild(removeImg);
 
         counter += 1;
 };
@@ -75,3 +77,6 @@ function submitForm() {
 
     document.getElementById('form').reset();
 };
+
+const removeClick = document.getElementsByClassName('remove');
+removeClick
