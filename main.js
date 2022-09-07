@@ -38,6 +38,15 @@ function displayBook() {
     });
 };
 
+// Display and hide new book form
+function openForm() {
+    document.getElementById("popupForm").style.display = "block";
+};
+
+function closeForm() {
+    document.getElementById("popupForm").style.display = "none";
+};
+
 addBookToLibrary('Harry Potter', 'J.K. Rowling', 5000, 'unread');
 
 addBookToLibrary('Workywok', 'Shroom drop', 68, 'read');
