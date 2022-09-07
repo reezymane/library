@@ -18,8 +18,6 @@ function addBookToLibrary(title, author, pages, read) {
 
 // Creates new divs for each library entry
 function displayBook(object = myLibrary[counter]) {
-        console.log(object);
-
         const cardDiv = document.createElement('div');
         cardDiv.classList.add('cardDiv');
 
@@ -37,6 +35,18 @@ function displayBook(object = myLibrary[counter]) {
 
             cardDiv.appendChild(display);
         };
+
+        // Adds remove button to each book
+        const remove = document.createElement('button');
+        remove.classList.add('remove');
+
+        cardDiv.appendChild(remove);
+
+        const removeImg = document.createElement('img');
+        removeImg.src = './img/trash.png';
+
+        const removeButton = document.getElementsByClassName('remove');
+        removeButton[0].appendChild(removeImg);
 
         counter += 1;
 };
