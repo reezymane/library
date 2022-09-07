@@ -40,15 +40,29 @@ function displayBook() {
 
 // Display and hide new book form
 function openForm() {
-    document.getElementById("popupForm").style.display = "block";
+    document.getElementById('popupForm').style.display = 'block';
 };
 
 function closeForm() {
-    document.getElementById("popupForm").style.display = "none";
+    document.getElementById('popupForm').style.display = 'none';
 };
 
-addBookToLibrary('Harry Potter', 'J.K. Rowling', 5000, 'unread');
+function clearForm() {
 
-addBookToLibrary('Workywok', 'Shroom drop', 68, 'read');
+};
 
-displayBook();
+// Submits form info to myLibrary
+function submitForm() {
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+    const read = document.getElementById('read').value;
+
+    addBookToLibrary(title, author, pages, read);
+
+    displayBook();
+
+    closeForm();
+
+    document.getElementById('form').reset();
+};
