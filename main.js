@@ -25,7 +25,7 @@ function displayBook(object = myLibrary[counter]) {
 
         container[0].appendChild(cardDiv);
 
-        cardDiv.setAttribute("data-entryNumber", counter);
+        cardDiv.setAttribute("id", counter);
 
         for(const [key, value] of Object.entries(object)) {
             const display = document.createElement('p');
@@ -44,13 +44,24 @@ function displayBook(object = myLibrary[counter]) {
 
         cardDiv.appendChild(remove);
 
+        remove.setAttribute("id", counter);
+
         const removeImg = document.createElement('img');
         removeImg.src = './img/trash.png';
 
         const removeButton = document.getElementsByClassName('remove');
         removeButton[counter].appendChild(removeImg);
 
+        
+
+        // Removes book from myLibrary and removes divs
+        const removeClick = document.getElementById(counter);
+        removeClick.addEventListener('click', () => {
+            container[0].removeChild(removeClick);
+        });
+        
         counter += 1;
+
 };
 
 // Display and hide new book form
@@ -78,5 +89,3 @@ function submitForm() {
     document.getElementById('form').reset();
 };
 
-const removeClick = document.getElementsByClassName('remove');
-removeClick
