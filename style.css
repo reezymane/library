@@ -1,4 +1,20 @@
+/* Remove padding and margin from all elements */
 * {
     margin: 0;
     padding: 0;
+}
+
+.cardContainer {
+    /* Create grid for new card entries*/
+    display: grid;
+    grid-auto-columns: 200px;
+    grid-auto-rows: 250px;
+    grid-auto-flow: column;
+    gap: 40px;
+    justify-content: center;
+}
+
+.cardDiv{
+    border: 3px solid black;
+    border-radius: 15px;
 }
