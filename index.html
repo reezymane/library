@@ -20,16 +20,22 @@
         </div>
 
         <!--Form for new book entry-->
-        <div class="bookForm">
+        <div id="popupForm">
             <form action="example.com/path" method="post">
-                <input type="text" id="title" name="title" required>
-                <label for="title">Title</label>
+                <div>
+                    <input type="text" id="title" name="title" required>
+                    <label for="title">Title</label>
+                </div>
 
-                <input type="text" id="author" name="author" required>
-                <label for="author">Author</label>
+                <div>
+                    <input type="text" id="author" name="author" required>
+                    <label for="author">Author</label>
+                </div>
 
-                <input type="number" id="pages" name="pages" required>
-                <label for="pages">Number of pages</label>
+                <div>
+                    <input type="number" id="pages" name="pages" required>
+                    <label for="pages">Number of pages</label>
+                </div>
 
                 <select name="read" id="read" required>
                     <option value="yes">Yes</option>
