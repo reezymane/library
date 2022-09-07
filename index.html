@@ -14,10 +14,12 @@
     <div class="pageContainer">
         <header></header>
 
+        <!--Button to enter a new book-->
         <div class="buttonDiv">
-            <button>+ New Book</button>
+            <button onclick="openForm()">+ New Book</button>
         </div>
 
+        <!--Form for new book entry-->
         <div class="bookForm">
             <form action="example.com/path" method="post">
                 <input type="text" id="title" name="title" required>
@@ -36,10 +38,11 @@
                 <label for="read">Have you read this title?</label>
 
                 <button type="button">Add Book</button>
-                <button type="button">Cancel</button>
+                <button type="button" onclick="closeForm()">Cancel</button>
             </form>
         </div>
 
+        <!--Empty container to display new book entries-->
         <div class="cardContainer">
             
         </div>
