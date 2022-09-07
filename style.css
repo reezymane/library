@@ -18,3 +18,17 @@
     border: 3px solid black;
     border-radius: 15px;
 }
+
+#popupForm {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 5%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+}
+
+form {
+    max-width: 450px;
+}
