@@ -10,13 +10,13 @@ function Book(title, author, pages, read) {
     this.read = read;
 
     // Toggles read status when called on a book
-    this.toggleStatus = function () {
-        if (read === 'yes') {
-            read = 'no';
-        } else {
-            read = 'yes';
-        };
-    };
+    //this.toggleStatus = function (checkbox) {
+    //    if (checkbox.checked) {
+    //        object.read = 'yes';
+    //    } else {
+    //        object.read = 'no';
+    //    };
+    //};
 };
 
 // Adds new entries to myLibrary
@@ -127,11 +127,11 @@ function displayBook(object = myLibrary[counter]) {
         const checkbox = document.querySelector('input[type="checkbox"]');
         checkbox.addEventListener('change', function () {
           if (checkbox.checked) {
-            // do this
-            console.log('Checked');
+            object.read = 'yes';
+            
           } else {
-            // do that
-            console.log('Not checked');
+            object.read = 'no';
+            
           }
         });
         
