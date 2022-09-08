@@ -1,5 +1,6 @@
 let myLibrary = [];
 let counter = 0;
+let removeCounter = 0;
 
 // Creates new objects for new entries
 function Book(title, author, pages, read) {
@@ -52,12 +53,25 @@ function displayBook(object = myLibrary[counter]) {
         const removeButton = document.getElementsByClassName('remove');
         removeButton[counter].appendChild(removeImg);
 
-        
-
         // Removes book from myLibrary and removes divs
         const removeClick = document.getElementById(counter);
         removeClick.addEventListener('click', () => {
             container[0].removeChild(removeClick);
+
+            if (removeCounter === 0) {
+                myLibrary.splice(removeClick.getAttribute('id'), 1);
+            } else {
+                if (removeClick.getAttribute('id') == 0) {
+                    myLibrary.splice(removeClick.getAttribute('id'), 1);
+                   
+                } else {
+                    myLibrary.splice((removeClick.getAttribute('id') - 1), 1); 
+                };
+            };
+            
+            removeCounter += 1;
+
+            counter -= 1;
         });
         
         counter += 1;
