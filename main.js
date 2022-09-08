@@ -2,6 +2,9 @@ let myLibrary = [];
 let counter = 0;
 let divIdReset = 0;
 let inputIdReset = 0;
+let rpIdReset = 0;
+let upIdReset = 0;
+let removeIDReset = 0;
 
 // Creates new objects for new entries
 function Book(title, author, pages, read) {
@@ -9,15 +12,6 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-
-    // Toggles read status when called on a book
-    //this.toggleStatus = function (checkbox) {
-    //    if (checkbox.checked) {
-    //        object.read = 'yes';
-    //    } else {
-    //        object.read = 'no';
-    //    };
-    //};
 };
 
 // Adds new entries to myLibrary
@@ -65,6 +59,7 @@ function displayBook(object = myLibrary[counter]) {
         const toRemove = document.getElementById(counter);
         const removeClick = document.getElementById((counter + 'r'));
         removeClick.addEventListener('click', () => {
+            
             container[0].removeChild(toRemove);
 
             myLibrary.splice(toRemove.getAttribute('id'), 1);
@@ -82,9 +77,30 @@ function displayBook(object = myLibrary[counter]) {
                 inputIdReset += 1;
             });
 
+            const read = document.querySelectorAll('.readPara');
+            read.forEach((status) => {
+                status.setAttribute('id', (rpIdReset + 'p'));
+                rpIdReset += 1;
+            });
+
+            const unread = document.querySelectorAll('.unreadPara');
+            unread.forEach((status) => {
+                status.setAttribute('id', (upIdReset + 'p'));
+                upIdReset += 1;
+            });
+
+            const nextRemove = document.querySelectorAll('.remove');
+            nextRemove.forEach((remove) => {
+                remove.setAttribute('id', (removeIDReset + 'p'));
+                upIdReset += 1;
+            });
+
             counter -= 1;
             divIdReset = 0;
             inputIdReset = 0;
+            rpIdReset = 0;
+            upIdReset = 0;
+            removeIDReset = 0;
         });
 
         // Adds read status button to each book
@@ -106,26 +122,34 @@ function displayBook(object = myLibrary[counter]) {
 
         statusInput.setAttribute('type', 'checkbox');
 
-        // Initially checks checkbox if user has read book
-        if (object.read == 'yes') {
-            statusInput.setAttribute('checked', 'checked');
+        const paraDiv = document.createElement('div');
+        paraDiv.classList.add('paraDiv');
 
-            // Displays the word "Read"
+        statusDiv.appendChild(paraDiv);
+
+            // Displays the word "Read" or "Unread"
             const read = document.createElement('p');
-            read.classList.add('readText');
+            read.setAttribute('id', counter + 'rp');
+            read.classList.add('readPara');
 
             read.textContent = 'Read';
 
-            statusDiv.appendChild(read);
-        } else {
-            // Displays the word "Unead"
+            paraDiv.appendChild(read);
+
             const unread = document.createElement('p');
-            unread.classList.add('readText');
+            unread.setAttribute('id', counter + 'up');
+            unread.classList.add('unreadPara');
 
             unread.textContent = 'Unread';
 
-            statusDiv.appendChild(unread);
-        };
+            paraDiv.appendChild(unread);
+
+            if (object.read == 'yes') {
+                statusInput.setAttribute('checked', 'checked');
+                document.getElementById((counter + 'rp')).style.display = 'block';
+            } else {
+                document.getElementById((counter + 'up')).style.display = 'block';
+            };
 
         const statusSpan = document.createElement('span');
         statusSpan.classList.add('slider');
@@ -134,15 +158,19 @@ function displayBook(object = myLibrary[counter]) {
 
         // Switches read status when checked
         const checkbox = document.getElementById((counter + 's'));
+        const readRef = document.getElementById((counter + 'rp'));
+        const unreadRef = document.getElementById((counter + 'up'));
         checkbox.addEventListener('change', function () {
           if (checkbox.checked) {
             object.read = 'yes';
             
-            console.log(myLibrary);
+            readRef.style.display = 'block';
+            unreadRef.style.display = 'none';
           } else {
             object.read = 'no';
-
-            console.log(myLibrary);
+            
+            readRef.style.display = 'none';
+            unreadRef.style.display = 'block';
           }
         });
         
