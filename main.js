@@ -42,8 +42,6 @@ function displayBook(object = myLibrary[counter]) {
             display.classList.add(key);
 
             display.textContent = `${key}: ${value}`;
-            
-            //const innerContainer = document.getElementsByClassName('cardDiv');
 
             cardDiv.appendChild(display);
         };
@@ -99,13 +97,34 @@ function displayBook(object = myLibrary[counter]) {
 
         statusInput.setAttribute('type', 'checkbox');
 
+        // Initially checks checkbox if user has read book
+        if (object.read == 'yes') {
+            statusInput.setAttribute('checked', 'checked');
+
+            // Displays the word "Read"
+            const read = document.createElement('p');
+            read.classList.add('readText');
+
+            read.textContent = 'Read';
+
+            statusDiv.appendChild(read);
+        } else {
+            // Displays the word "Unead"
+            const unread = document.createElement('p');
+            unread.classList.add('readText');
+
+            unread.textContent = 'Unread';
+
+            statusDiv.appendChild(unread);
+        };
+
         const statusSpan = document.createElement('span');
         statusSpan.classList.add('slider');
 
         statusLabel.appendChild(statusSpan);
 
+        // Switches read status when checked
         const checkbox = document.querySelector('input[type="checkbox"]');
-
         checkbox.addEventListener('change', function () {
           if (checkbox.checked) {
             // do this
@@ -117,7 +136,6 @@ function displayBook(object = myLibrary[counter]) {
         });
         
         counter += 1;
-
 };
 
 // Display and hide new book form
