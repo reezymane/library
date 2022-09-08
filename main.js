@@ -43,7 +43,7 @@ function displayBook(object = myLibrary[counter]) {
 
             display.textContent = `${key}: ${value}`;
             
-            const innerContainer = document.getElementsByClassName('cardDiv');
+            //const innerContainer = document.getElementsByClassName('cardDiv');
 
             cardDiv.appendChild(display);
         };
@@ -54,7 +54,7 @@ function displayBook(object = myLibrary[counter]) {
 
         cardDiv.appendChild(remove);
 
-        remove.setAttribute("id", counter);
+        remove.setAttribute("id", counter + 'r');
 
         const removeImg = document.createElement('img');
         removeImg.src = './img/trash.png';
@@ -63,11 +63,12 @@ function displayBook(object = myLibrary[counter]) {
         removeButton[counter].appendChild(removeImg);
 
         // Removes book divs and removes corresponding object from myLibrary
-        const removeClick = document.getElementById(counter);
+        const toRemove = document.getElementById(counter);
+        const removeClick = document.getElementById((counter + 'r'));
         removeClick.addEventListener('click', () => {
-            container[0].removeChild(removeClick);
+            container[0].removeChild(toRemove);
 
-            myLibrary.splice(removeClick.getAttribute('id'), 1);
+            myLibrary.splice(toRemove.getAttribute('id'), 1);
 
             // Reassigns ID values to cardDiv's
             const nextCardDivs = document.querySelectorAll('.cardDiv');
@@ -78,6 +79,41 @@ function displayBook(object = myLibrary[counter]) {
 
             counter -= 1;
             idReset = 0;
+        });
+
+        // Adds read status button to each book
+        const statusDiv = document.createElement('div');
+        statusDiv.classList.add('statusDiv');
+        
+        cardDiv.appendChild(statusDiv);
+        
+        const statusLabel = document.createElement('label');
+        statusLabel.classList.add('switch');
+
+        statusDiv.appendChild(statusLabel);
+
+        const statusInput = document.createElement('input');
+        statusInput.classList.add('statusInput');
+
+        statusLabel.appendChild(statusInput);
+
+        statusInput.setAttribute('type', 'checkbox');
+
+        const statusSpan = document.createElement('span');
+        statusSpan.classList.add('slider');
+
+        statusLabel.appendChild(statusSpan);
+
+        const checkbox = document.querySelector('input[type="checkbox"]');
+
+        checkbox.addEventListener('change', function () {
+          if (checkbox.checked) {
+            // do this
+            console.log('Checked');
+          } else {
+            // do that
+            console.log('Not checked');
+          }
         });
         
         counter += 1;
