@@ -8,6 +8,15 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+
+    // Toggles read status when called on a book
+    this.toggleStatus = function () {
+        if (read === 'yes') {
+            read = 'no';
+        } else {
+            read = 'yes';
+        };
+    };
 };
 
 // Adds new entries to myLibrary
