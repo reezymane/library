@@ -1,6 +1,7 @@
 let myLibrary = [];
 let counter = 0;
-let idReset = 0;
+let divIdReset = 0;
+let inputIdReset = 0;
 
 // Creates new objects for new entries
 function Book(title, author, pages, read) {
@@ -71,12 +72,19 @@ function displayBook(object = myLibrary[counter]) {
             // Reassigns ID values to cardDiv's
             const nextCardDivs = document.querySelectorAll('.cardDiv');
             nextCardDivs.forEach((div) => {
-                div.setAttribute('id', idReset);
-                idReset += 1;
+                div.setAttribute('id', divIdReset);
+                divIdReset += 1;
+            });
+
+            const nextInput = document.querySelectorAll('.statusInput');
+            nextInput.forEach((input) => {
+                input.setAttribute('id', (inputIdReset + 's'));
+                inputIdReset += 1;
             });
 
             counter -= 1;
-            idReset = 0;
+            divIdReset = 0;
+            inputIdReset = 0;
         });
 
         // Adds read status button to each book
@@ -92,6 +100,7 @@ function displayBook(object = myLibrary[counter]) {
 
         const statusInput = document.createElement('input');
         statusInput.classList.add('statusInput');
+        statusInput.setAttribute('id', counter + 's');
 
         statusLabel.appendChild(statusInput);
 
@@ -124,14 +133,16 @@ function displayBook(object = myLibrary[counter]) {
         statusLabel.appendChild(statusSpan);
 
         // Switches read status when checked
-        const checkbox = document.querySelector('input[type="checkbox"]');
+        const checkbox = document.getElementById((counter + 's'));
         checkbox.addEventListener('change', function () {
           if (checkbox.checked) {
             object.read = 'yes';
             
+            console.log(myLibrary);
           } else {
             object.read = 'no';
-            
+
+            console.log(myLibrary);
           }
         });
         
