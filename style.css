@@ -10,6 +10,20 @@ button {
     font-family: URW Chancery L, cursive;
 }
 
+/* Create a column out of the page sections */
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: aquamarine;
+}
+
+footer {
+    background-color: aquamarine;
+}
+
 .cardContainer {
     /* Create grid for new card entries*/
     display: grid;
@@ -32,6 +46,7 @@ button {
    display: none;
 }
 
+/* Hide pop up form*/
 #popupForm {
     display: none;
     position: fixed;
