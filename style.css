@@ -35,11 +35,18 @@ header {
     background-image: url(./img/border.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+
+    color: white;
+    font-weight: bold;
 }
 
 .pageTitle {
     font-size: 50px;
-    font-weight: bold;
+}
+
+.subTitle {
+    font-size: 18px;
 }
 
 .buttonDiv {
@@ -54,6 +61,7 @@ footer {
     background-image: url(./img/border.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .cardContainer {
