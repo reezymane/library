@@ -99,6 +99,8 @@ footer {
 
     height: 250px;
     width: 200px;
+
+    padding: 15px 10px;
 }
 
 /* Removes "read: value" from display*/
