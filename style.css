@@ -34,6 +34,8 @@ footer {
     grid-auto-flow: column;
     gap: 40px;
     justify-content: center;
+
+    min-height: calc(100vh - 200px);
 }
 
 .cardDiv{
