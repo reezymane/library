@@ -17,6 +17,13 @@
 .cardDiv{
     border: 3px solid black;
     border-radius: 15px;
+    position: relative;
+}
+
+/* Removes "read: value" from display*/
+.read {
+    position: absolute;
+   display: none;
 }
 
 #popupForm {
@@ -95,3 +102,17 @@ form {
   .slider.round:before {
     border-radius: 50%;
   }
+
+.paraDiv {
+    position: relative;
+}
+
+.readPara {
+    position: absolute;
+    display: none;
+}
+
+.unreadPara {
+    position: absolute;
+    display: none;
+}
