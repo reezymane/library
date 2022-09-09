@@ -18,10 +18,12 @@ button {
 
 header {
     background-color: aquamarine;
+    height: 100px;
 }
 
 footer {
     background-color: aquamarine;
+    height: 100px;
 }
 
 .cardContainer {
