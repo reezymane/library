@@ -15,16 +15,26 @@ button {
     display: flex;
     flex-direction: column;
     max-width: 1920px;
+
+    /* Add background image to book area*/
+    background-image: url(./img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 header {
-    background-color: aquamarine;
     height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+    /* Add background image to header*/
+    background-image: url(./img/border.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .pageTitle {
@@ -38,8 +48,12 @@ header {
 }
 
 footer {
-    background-color: aquamarine;
     height: 100px;
+
+    /* Add background image to footer*/
+    background-image: url(./img/border.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .cardContainer {
