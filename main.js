@@ -41,73 +41,6 @@ function displayBook(object = myLibrary[counter]) {
             cardDiv.appendChild(display);
         };
 
-        // Adds remove button to each book
-        const removeDiv = document.createElement('div');
-        removeDiv.classList.add('removeDiv');
-
-        cardDiv.appendChild(removeDiv);
-
-        const remove = document.createElement('button');
-        remove.classList.add('remove');
-
-        removeDiv.appendChild(remove);
-
-        remove.setAttribute("id", counter + 'r');
-
-        const removeImg = document.createElement('img');
-        removeImg.src = './img/trash.png';
-
-        const removeButton = document.getElementsByClassName('remove');
-        removeButton[counter].appendChild(removeImg);
-
-        // Removes book divs and removes corresponding object from myLibrary
-        const toRemove = document.getElementById(counter);
-        const removeClick = document.getElementById((counter + 'r'));
-        removeClick.addEventListener('click', () => {
-            
-            container[0].removeChild(toRemove);
-
-            myLibrary.splice(toRemove.getAttribute('id'), 1);
-
-            // Reassigns ID values to cardDiv's
-            const nextCardDivs = document.querySelectorAll('.cardDiv');
-            nextCardDivs.forEach((div) => {
-                div.setAttribute('id', divIdReset);
-                divIdReset += 1;
-            });
-
-            const nextInput = document.querySelectorAll('.statusInput');
-            nextInput.forEach((input) => {
-                input.setAttribute('id', (inputIdReset + 's'));
-                inputIdReset += 1;
-            });
-
-            const read = document.querySelectorAll('.readPara');
-            read.forEach((status) => {
-                status.setAttribute('id', (rpIdReset + 'p'));
-                rpIdReset += 1;
-            });
-
-            const unread = document.querySelectorAll('.unreadPara');
-            unread.forEach((status) => {
-                status.setAttribute('id', (upIdReset + 'p'));
-                upIdReset += 1;
-            });
-
-            const nextRemove = document.querySelectorAll('.remove');
-            nextRemove.forEach((remove) => {
-                remove.setAttribute('id', (removeIDReset + 'p'));
-                upIdReset += 1;
-            });
-
-            counter -= 1;
-            divIdReset = 0;
-            inputIdReset = 0;
-            rpIdReset = 0;
-            upIdReset = 0;
-            removeIDReset = 0;
-        });
-
         // Adds read status button to each book
         const statusDiv = document.createElement('div');
         statusDiv.classList.add('statusDiv');
@@ -177,6 +110,73 @@ function displayBook(object = myLibrary[counter]) {
             readRef.style.display = 'none';
             unreadRef.style.display = 'block';
           }
+        });
+
+        // Adds remove button to each book
+        const removeDiv = document.createElement('div');
+        removeDiv.classList.add('removeDiv');
+
+        cardDiv.appendChild(removeDiv);
+
+        const remove = document.createElement('button');
+        remove.classList.add('remove');
+
+        removeDiv.appendChild(remove);
+
+        remove.setAttribute("id", counter + 'r');
+
+        const removeImg = document.createElement('img');
+        removeImg.src = './img/trash.png';
+
+        const removeButton = document.getElementsByClassName('remove');
+        removeButton[counter].appendChild(removeImg);
+
+        // Removes book divs and removes corresponding object from myLibrary
+        const toRemove = document.getElementById(counter);
+        const removeClick = document.getElementById((counter + 'r'));
+        removeClick.addEventListener('click', () => {
+            
+            container[0].removeChild(toRemove);
+
+            myLibrary.splice(toRemove.getAttribute('id'), 1);
+
+            // Reassigns ID values to cardDiv's
+            const nextCardDivs = document.querySelectorAll('.cardDiv');
+            nextCardDivs.forEach((div) => {
+                div.setAttribute('id', divIdReset);
+                divIdReset += 1;
+            });
+
+            const nextInput = document.querySelectorAll('.statusInput');
+            nextInput.forEach((input) => {
+                input.setAttribute('id', (inputIdReset + 's'));
+                inputIdReset += 1;
+            });
+
+            const read = document.querySelectorAll('.readPara');
+            read.forEach((status) => {
+                status.setAttribute('id', (rpIdReset + 'p'));
+                rpIdReset += 1;
+            });
+
+            const unread = document.querySelectorAll('.unreadPara');
+            unread.forEach((status) => {
+                status.setAttribute('id', (upIdReset + 'p'));
+                upIdReset += 1;
+            });
+
+            const nextRemove = document.querySelectorAll('.remove');
+            nextRemove.forEach((remove) => {
+                remove.setAttribute('id', (removeIDReset + 'p'));
+                upIdReset += 1;
+            });
+
+            counter -= 1;
+            divIdReset = 0;
+            inputIdReset = 0;
+            rpIdReset = 0;
+            upIdReset = 0;
+            removeIDReset = 0;
         });
         
         counter += 1;
