@@ -29,10 +29,13 @@ footer {
 
 .cardContainer {
     /* Create grid for new card entries*/
-    display: grid;
-    grid-auto-columns: 200px;
+    /*display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-auto-columns:200px;
     grid-auto-rows: 250px;
-    grid-auto-flow: column;
+    grid-auto-flow: column;*/
+    display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
 
@@ -43,6 +46,9 @@ footer {
     border: 3px solid black;
     border-radius: 15px;
     position: relative;
+
+    height: 250px;
+    width: 200px;
 }
 
 /* Removes "read: value" from display*/
