@@ -117,6 +117,16 @@ footer {
     gap: 3px;
 }
 
+.removeDiv {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.remove {
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(255, 255, 255, 0);
+}
+
 /* Removes "read: value" from display*/
 .read {
     position: absolute;
