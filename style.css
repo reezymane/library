@@ -26,6 +26,11 @@ header {
     align-items: center;
 }
 
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+}
+
 footer {
     background-color: aquamarine;
     height: 100px;
