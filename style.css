@@ -91,7 +91,7 @@ footer {
     min-height: calc(100vh - 250px);
 }
 
-.cardDiv{
+.cardDiv {
     border: 3px solid black;
     border-radius: 15px;
     position: relative;
@@ -101,6 +101,13 @@ footer {
     width: 200px;
 
     padding: 15px 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.statusDiv {
+    flex: 1;
 }
 
 /* Removes "read: value" from display*/
