@@ -24,9 +24,10 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
-header .pageTitle {
+.pageTitle {
     font-size: 50px;
     font-weight: bold;
 }
