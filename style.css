@@ -95,14 +95,15 @@ form {
   }
   
   /* Rounded sliders */
-  .slider.round {
+  .slider {
     border-radius: 34px;
   }
   
-  .slider.round:before {
+  .slider:before {
     border-radius: 50%;
   }
 
+  /* Hides and unhides the words "Read" and "Unread"*/
 .paraDiv {
     position: relative;
 }
