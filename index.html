@@ -12,7 +12,10 @@
 </head>
 <body>
     <div class="pageContainer">
-        <header></header>
+        <header>
+            <p class="pageTitle">The Library App</p>
+            <p class="subTitle">Store all of you favorite books and must reads!</p>
+        </header>
 
         <!--Button to enter a new book-->
         <div class="buttonDiv">
@@ -21,7 +24,7 @@
 
         <!--Form for new book entry-->
         <div id="popupForm">
-            <form action="example.com/path" method="post">
+            <form action="example.com/path" method="post" id="form">
                 <div>
                     <label for="title">Title</label>
                     <input type="text" id="title" name="title" required>
@@ -46,7 +49,7 @@
                 </div>
 
                 <div>
-                    <button type="button">Add Book</button>
+                    <button type="button" onclick="submitForm()">Add Book</button>
                     <button type="button" onclick="closeForm()">Cancel</button>
                 </div>
             </form>
@@ -56,6 +59,8 @@
         <div class="cardContainer">
             
         </div>
+
+        <footer></footer>
     </div>    
 </body>
 </html>
