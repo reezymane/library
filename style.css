@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+/* Add font style to all elements */
+.pageContainer,
+button {
+    font-family: URW Chancery L, cursive;
+}
+
 .cardContainer {
     /* Create grid for new card entries*/
     display: grid;
