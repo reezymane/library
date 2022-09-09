@@ -145,7 +145,17 @@ footer {
 }
 
 form {
-    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+
+    width: 270px;
+}
+
+form > div {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
 }
 
 /* The switch - the box around the slider */
