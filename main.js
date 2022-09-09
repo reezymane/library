@@ -42,10 +42,15 @@ function displayBook(object = myLibrary[counter]) {
         };
 
         // Adds remove button to each book
+        const removeDiv = document.createElement('div');
+        removeDiv.classList.add('removeDiv');
+
+        cardDiv.appendChild(removeDiv);
+
         const remove = document.createElement('button');
         remove.classList.add('remove');
 
-        cardDiv.appendChild(remove);
+        removeDiv.appendChild(remove);
 
         remove.setAttribute("id", counter + 'r');
 
