@@ -7,11 +7,14 @@ let upIdReset = 0;
 let removeIDReset = 0;
 
 // Creates new objects for new entries
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+       this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read; 
+    }
+    
 };
 
 // Adds new entries to myLibrary
