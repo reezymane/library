@@ -210,3 +210,23 @@ function submitForm() {
     document.getElementById('form').reset();
 };
 
+const submitButton = document. querySelector('form p+button');
+submitButton.addEventListener('click', (event) => {
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    const pages = document.getElementById('pages');
+    
+    if (!title.checkValidity()) {
+        title.reportValidity();
+        event.preventDefault();
+    } else if (!author.checkValidity()) {
+        author.reportValidity();
+        event.preventDefault();
+    } else if (!pages.checkValidity()) {
+        pages.reportValidity();
+        event.preventDefault();
+    } else {
+        submitForm();
+    };
+});
+
